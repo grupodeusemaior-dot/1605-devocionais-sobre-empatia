@@ -1,0 +1,38 @@
+1605 DEVOCIONAL DIÁRIO — PWA / Renova-me Deus Meu
+
+Este pacote contém:
+- Aplicativo web responsivo com leitor e texto justificado
+- Menu inicial com Volumes 1 a 8; Volume 2–8 exibem “Em construção”
+- Créditos completos conforme a capa/apresentação do PDF
+- Botão Site para o repositório oficial: https://sites.google.com/view/grupo-deus-e-maior/p%C3%A1gina-inicial
+- Capa do PDF como imagem de apresentação e base dos ícones
+- PWA manifest, service worker e cache offline
+- 200 devocionais numerados, recuperados e conferidos na sequência do PDF, inclusive cabeçalhos com OCR/texto irregular
+
+INSTALAÇÃO PWA
+Para instalar em Android/iPhone, o app precisa estar acessível por HTTPS:
+1. Hospede o conteúdo desta pasta em um endereço HTTPS (ou em servidor local para teste).
+2. Android/Chrome: menu ⋮ > Instalar app / Adicionar à tela inicial.
+3. iPhone/Safari: Compartilhar > Adicionar à Tela de Início.
+O botão “Instalar no celular” mostra as instruções e usa o prompt nativo quando o navegador oferece.
+
+IMPORTANTE SOBRE NATIVO
+Este pacote é um PWA instalável. Não contém APK Android assinado nem IPA iOS assinado. APK pode ser compilado com Android Studio/Capacitor; IPA exige macOS/Xcode e assinatura Apple. O iPhone não permite simplesmente instalar um IPA não assinado.
+
+TESTAR LOCALMENTE
+Use um servidor local (por exemplo, a extensão Live Server no VS Code) para testar o service worker. Abrir index.html diretamente via file:// não habilita instalação PWA/offline.
+
+CRÉDITOS DO VOLUME
+1605 Temas Devocionais — Como Deus Ensinou a Ter Empatia
+Autores: Rosilene Maria da Silva Oliveira e Ricardo Augusto de Oliveira
+Renova-me Deus Meu · Cuiabá-MT · 2026
+Conteúdo: Grupo Deus é Maior® e RDM – Renova-me Deus Meu®
+
+
+VERSÃO DESKTOP WINDOWS (OPCIONAL)
+Este pacote também mantém a estrutura Electron do app de computador. No terminal da pasta:
+  npm install
+  npm start
+Para compilar portátil Windows:
+  npm run build
+O Electron Builder exige Node.js e dependências de compilação instaladas.

@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="pt-BR"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#20150f"><meta name="description" content="1605 Temas Devocionais — Como Deus ensinou a ter empatia. Renova-me Deus Meu.">
+<link rel="manifest" href="./manifest.webmanifest"><link rel="icon" href="./icon-192.png"><link rel="apple-touch-icon" href="./apple-touch-icon.png"><link rel="apple-touch-startup-image" href="./apresentacao-app.png">
+<title>1605 — Empatia | Renova-me Deus Meu</title>
+<style>
+:root{--brown:#20150f;--gold:#e2bd70;--cream:#fff8ec;--ink:#34271e;--muted:#75675b;--pink:#b77b88}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:Georgia,'Times New Roman',serif;color:var(--ink)}
+body{background:linear-gradient(140deg,#20150f,#4b3022);min-height:100vh}
+header{color:#fff;text-align:center;padding:20px 16px 22px;background:#20150f;border-bottom:3px solid var(--gold)}
+.brand{font:700 12px Arial,sans-serif;letter-spacing:3px;color:var(--gold)}
+h1{font-size:clamp(25px,5vw,40px);margin:7px 0 4px}header p{font:14px Arial;margin:0;color:#e7d7c4}
+main{max-width:820px;margin:22px auto;padding:0 14px 30px}
+.card{background:var(--cream);border-radius:20px;padding:clamp(18px,5vw,34px);box-shadow:0 20px 55px #0005}
+.cover{display:block;width:min(100%,300px);max-height:430px;object-fit:contain;margin:0 auto 18px;border-radius:10px;box-shadow:0 8px 25px #3c241c35}
+h2{color:#39251a;font-size:clamp(24px,4vw,32px);margin:0 0 12px;text-align:center}
+.intro{text-align:center;line-height:1.6;color:#6e5b4c;margin:0 auto 22px;max-width:540px}
+.menu-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+button,.btn{border:0;border-radius:11px;padding:13px 12px;background:#342218;color:white;font:600 15px Arial,sans-serif;cursor:pointer;text-align:center;text-decoration:none;display:block}
+button:active{transform:scale(.99)}.gold{background:#b58b42;color:#21170f}.light{background:#eadcc7;color:#3a2b20}.wide{grid-column:1/-1}
+.volume-note{font:13px Arial;color:var(--muted);text-align:center;margin:18px 0 0}
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;font:13px Arial;color:var(--muted)}
+select{max-width:100%;padding:10px;border:1px solid #d7c5a8;border-radius:9px;background:#fffaf2;font:14px Arial}
+#devTitle{color:#39251a;text-align:left;margin:22px 0 16px;font-size:clamp(24px,4vw,34px)}
+#devContent{white-space:pre-line;line-height:1.85;font-size:18px;text-align:justify;text-justify:inter-word;hyphens:auto}
+#devContent p{margin:0 0 14px}
+.read-actions{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:24px}
+footer{text-align:center;color:#eddfcb;font:12px Arial;padding:0 16px 20px}
+dialog{border:0;border-radius:18px;max-width:560px;width:calc(100% - 28px);background:var(--cream);color:var(--ink);padding:26px;box-shadow:0 18px 60px #0007}
+dialog::backdrop{background:#100b08b8}.modal-close{float:right;background:#eadcc7;color:#39251a}
+.modal-text{line-height:1.65;white-space:pre-line}.modal-text a{color:#6b481b;overflow-wrap:anywhere}
+#installHelp{display:none;background:#f1e3ce;padding:14px;border-radius:10px;margin-top:14px;font:14px/1.55 Arial}
+@media(max-width:420px){.menu-grid{grid-template-columns:1fr}.read-actions{grid-template-columns:1fr}.cover{max-height:350px}}
+@media print{body{background:white}header,footer,.topbar,.read-actions{display:none}main{margin:0;padding:0}.card{box-shadow:none}#devContent{text-align:justify}}
+</style></head>
+<body>
+<header><div class="brand">RENOVA-ME DEUS MEU</div><h1>1605 Temas Devocionais</h1><p>Como Deus ensinou a ter empatia</p></header>
+<main><section class="card" id="home">
+<img class="cover" src="./capa-livro.jpg" alt="Capa do livro 1605 Temas Devocionais — Como Deus ensinou a ter empatia">
+<h2>Empatia: uma jornada pelas Escrituras</h2>
+<p class="intro">Devocionais para aprender a sentir, ver e amar como Deus. Escolha um volume para começar sua leitura.</p>
+<div class="menu-grid">
+<button class="gold" onclick="openVolume(1)">Volume 1 · Ler</button>
+<button class="light" onclick="openVolume(2)">Volume 2</button>
+<button class="light" onclick="openVolume(3)">Volume 3</button>
+<button class="light" onclick="openVolume(4)">Volume 4</button>
+<button class="light" onclick="openVolume(5)">Volume 5</button>
+<button class="light" onclick="openVolume(6)">Volume 6</button>
+<button class="light" onclick="openVolume(7)">Volume 7</button>
+<button class="light" onclick="openVolume(8)">Volume 8</button>
+<button class="wide" onclick="showCredits()">Créditos</button>
+<button class="wide light" onclick="openSite()">Site Renova-me Deus Meu ↗</button>
+<button class="wide gold" id="installButton" onclick="installApp()">Instalar no celular</button>
+</div><div id="installHelp"></div>
+<p class="volume-note">Volume 1 disponível neste lançamento. Os demais serão acrescentados nas próximas atualizações.</p>
+</section>
+<section class="card" id="reader" hidden>
+<div class="topbar"><button class="light" onclick="goHome()">← Voltar aos volumes</button><label>Dia <select id="daySelect" aria-label="Selecionar dia"></select></label></div>
+<h2 id="devTitle"></h2><article id="devContent"></article>
+<div class="read-actions"><button onclick="changeDay(-1)">← Anterior</button><button onclick="changeDay(1)">Próximo →</button><button class="gold" onclick="shareDevotional()">Compartilhar</button><button class="light" onclick="copyDevotional()">Copiar texto</button><button class="light" onclick="window.print()">Imprimir / PDF</button></div>
+</section>
+<section class="card" id="construction" hidden><img class="cover" src="./capa-livro.jpg" alt="Capa do livro"><h2 id="constructionTitle">Volume 2</h2><p class="intro" style="font-size:20px;color:#8b6230;font-weight:bold">Em construção</p><p class="intro">Este módulo será disponibilizado em uma próxima atualização do aplicativo. Que esta jornada de leitura continue crescendo, volume por volume.</p><button class="wide" onclick="goHome()">Voltar aos volumes</button></section>
+</main><footer>Renova-me Deus Meu · Cuiabá-MT · 2026</footer>
+<dialog id="credits"><button class="modal-close" onclick="closeCredits()">Fechar ✕</button><h2 style="text-align:left">Créditos</h2><div class="modal-text">
+<strong>1605 Temas Devocionais</strong>
+Como Deus Ensinou a Ter Empatia
+Empatia: uma jornada pelas Escrituras — Volume 1
+
+<strong>Autores</strong>
+Rosilene Maria da Silva Oliveira
+Ricardo Augusto de Oliveira
+
+<strong>Projeto</strong>
+Renova-me Deus Meu
+Cuiabá – MT · 2026
+
+<strong>Conteúdo e divulgação</strong>
+Grupo Deus é Maior® e RDM – Renova-me Deus Meu®
+
+Material disponibilizado para divulgação e adaptação sem fins lucrativos, conforme a apresentação do projeto.
+</div></dialog>
+<script>
+const SITE_URL="https://sites.google.com/view/grupo-deus-e-maior/p%C3%A1gina-inicial";
+let devotionals=[],dayIndex=0,installPrompt=null;
+const el=id=>document.getElementById(id);
+function openVolume(n){el('home').hidden=true;el('reader').hidden=true;el('construction').hidden=true;
+ if(n===1){el('reader').hidden=false;window.scrollTo(0,0);return}
+ el('construction').hidden=false;el('constructionTitle').textContent='Volume '+n;window.scrollTo(0,0)}
+function goHome(){el('home').hidden=false;el('reader').hidden=true;el('construction').hidden=true;window.scrollTo(0,0)}
+function renderDay(i){dayIndex=(i+devotionals.length)%devotionals.length;const d=devotionals[dayIndex];el('devTitle').textContent=d.title;el('devContent').textContent=d.content;el('daySelect').value=String(dayIndex);window.scrollTo(0,0)}
+function changeDay(delta){renderDay(dayIndex+delta)}
+fetch('./devocionais.json').then(r=>r.json()).then(data=>{devotionals=data;data.forEach((d,i)=>{let o=document.createElement('option');o.value=i;o.textContent='Dia '+d.day+' — '+d.title;el('daySelect').appendChild(o)});let anchor=new Date(2026,0,1),today=new Date();let elapsed=Math.floor((new Date(today.getFullYear(),today.getMonth(),today.getDate())-anchor)/86400000);renderDay(((elapsed%200)+200)%200)});
+el('daySelect').addEventListener('change',e=>renderDay(+e.target.value));
+function currentText(){return el('devTitle').textContent+'\\n\\n'+el('devContent').textContent+'\\n\\nRenova-me Deus Meu — 1605 Temas Devocionais'}
+async function copyDevotional(){try{await navigator.clipboard.writeText(currentText());alert('Texto copiado!')}catch(e){fallbackCopy()}}
+async function shareDevotional(){if(navigator.share){try{await navigator.share({title:el('devTitle').textContent,text:currentText()})}catch(e){}}else fallbackCopy()}
+function fallbackCopy(){let t=document.createElement('textarea');t.value=currentText();document.body.appendChild(t);t.select();document.execCommand('copy');t.remove();alert('Texto copiado.')}
+function openSite(){window.open(SITE_URL,'_blank','noopener')}
+function showCredits(){el('credits').showModal()}
+function closeCredits(){el('credits').close()}
+window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();installPrompt=e;el('installButton').textContent='Instalar aplicativo'});
+async function installApp(){if(installPrompt){installPrompt.prompt();await installPrompt.userChoice;installPrompt=null;return}
+let help=el('installHelp');help.style.display='block';help.innerHTML='<b>Como adicionar à tela inicial:</b><br><br><b>Android (Chrome):</b> abra o endereço publicado do app, toque no menu ⋮ e escolha “Instalar app” ou “Adicionar à tela inicial”.<br><br><b>iPhone (Safari):</b> abra o endereço publicado, toque em Compartilhar ⬆ e escolha “Adicionar à Tela de Início”.'}
+if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}))}
+</script></body></html>

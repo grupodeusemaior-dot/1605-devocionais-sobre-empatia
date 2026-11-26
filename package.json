@@ -1,0 +1,33 @@
+{
+  "name": "1605-devocional-diario",
+  "version": "1.0.0",
+  "description": "Aplicativo local de devocionais Renova-me Deus Meu",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "devDependencies": {
+    "electron": "^35.0.0",
+    "electron-builder": "^26.0.0"
+  },
+  "build": {
+    "appId": "br.renovamedeusmeu.devocional1605",
+    "productName": "1605 Devocional Diário",
+    "win": {
+      "target": "portable"
+    },
+    "files": [
+      "main.js",
+      "index.html",
+      "devocionais.json",
+      "manifest.webmanifest",
+      "sw.js",
+      "capa-livro.jpg",
+      "apresentacao-app.png",
+      "icon-192.png",
+      "icon-512.png",
+      "apple-touch-icon.png"
+    ]
+  }
+}
